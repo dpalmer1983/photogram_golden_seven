@@ -1,13 +1,32 @@
-<h1>List of Photos</h1>
+<html>
+<body>
+  <div class="container">
+    <div class="col-md-6">
+      <h1>All Photos</h1>
+      <a href="/photos/new">
+        Add a new photo
+      </a>
 
-<% @list_of_photos.each   do    |photo|  %>
-<img src=" <%= photo.source %> " >
-<p>
-  <%= photo.caption %>
-</p>
-<div>
-  <a href="http://localhost:3000/photos/<%= photo.id %>">Detail</a>
-  <a href="http://localhost:3000/photos/<%= photo.id %>/edit">Edit</a>
-  <a href="http://localhost:3000/photos/delete_photo/<%= photo.id %>">Delete</a>
-</div>
-<% end %>
+      <% @list_of_photos.each   do    |photo|  %>
+      <div class="thumbnail">
+        <img src=" <%= photo.source %> " >
+
+        <div class="caption">
+          <p>
+            <%= photo.caption %>
+          </p>
+          <div>
+            <a class="btn btn-default btn-md btn-block" href="http://localhost:3000/photos/<%= photo.id %>" role="button">Show Details</a>
+          </div><p></p>
+          <div>
+            <a class="btn btn-default btn-md btn-block" href="http://localhost:3000/photos/<%= photo.id %>/edit" role="button">Edit</a>
+          </div><p></p>
+          <div>
+            <a class="btn btn-default btn-md btn-block" href="http://localhost:3000/photos/delete_photo/<%= photo.id %>" role="button">Delete</a>
+          </div>
+        </div>
+      </div><% end %>
+    </div>
+      </div>
+</body>
+</html>

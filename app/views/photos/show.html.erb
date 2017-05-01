@@ -1,24 +1,22 @@
-<div>
+<div class="container">
+  <h1> Photo Details </h1>
+  <div>
+    <p>
+      <%= @photo.caption %>
+    </p>
+    <img src=" <%= @photo.source %> " >
 
-
-  <img src=" <%= @photo.source %> " >
-  <p>
-    <%= @photo.caption %>
-  </p>
-
-
-  <!-- <p>
+    <!-- <p>
     <%= @photo.created_at %>
   </p> -->
   <p>
     <%= time_ago_in_words(@photo.created_at) %>
   </p>
-
-
-
   <div>
-    <a href="http://localhost:3000/photos">Back</a>
-    <a href="http://localhost:3000/photos/<%= @photo.id %>/edit">Edit</a>
-    <a href="http://localhost:3000/photos/delete_photo/<%= @photo.id %>">Delete</a>
+    <a class="btn btn-default" href="http://localhost:3000/photos" role="button">Go back</a>
+    <a class="btn btn-default" href="http://localhost:3000/photos/<%= @photo.id %>/edit" role="button">Edit</a>
+    <a class="btn btn-default" href="http://localhost:3000/photos/delete_photo/<%= @photo.id %>" role="button">Delete</a>
+
   </div>
+</div>
 </div>
